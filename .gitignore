@@ -1,0 +1,12 @@
+# Terraform state — NEVER commit this
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Variables with sensitive data
+terraform.tfvars
+*.auto.tfvars
+
+# Crash log
+crash.log
