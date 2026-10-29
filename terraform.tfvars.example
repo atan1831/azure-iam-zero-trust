@@ -1,0 +1,4 @@
+tenant_id       = "YOUR-TENANT-ID"
+subscription_id = "YOUR-SUBSCRIPTION-ID"
+prefix          = "sec"
+environment     = "dev"
