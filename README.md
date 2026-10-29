@@ -36,7 +36,9 @@ at resources but cannot change or delete anything.
 
 ## Screenshots
 
-<<img width="1107" height="841" alt="sec-dev-custom-role" src="https://github.com/user-attachments/assets/b50e6e72-e2aa-4aca-9168-6898688e0d2e" />
+<img width="1103" height="658" alt="sec-dev-custom-role" src="https://github.com/user-attachments/assets/a8f28289-fbe3-4686-9b38-47c53b05e3b5" />
+IAM role assignments
 <img width="1425" height="722" alt="sec-dev-custom-role desc" src="https://github.com/user-attachments/assets/128a152a-1cfa-47c1-b80c-808035398d1c" />
+custom role permissions
 <img width="1678" height="873" alt="sec-dev-app" src="https://github.com/user-attachments/assets/cff6bf7a-5716-4067-94f8-d106da451654" />
-app registration, IAM role assignments, custom role permissions
+app registration
