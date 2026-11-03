@@ -26,6 +26,13 @@ at resources but cannot change or delete anything.
 - Service Principal password is marked sensitive in outputs
 - Humans and apps are separated: I am the only Owner, the app has a custom role
 
+## Requirements
+
+- Terraform >= 1.5.0
+- Azure CLI, signed in with `az login`
+- An Azure subscription where you can create custom roles (Owner or User Access Administrator)
+- Entra ID P1 licence, only if you want to deploy the Conditional Access policy
+
 ## How to run
 
     az login
