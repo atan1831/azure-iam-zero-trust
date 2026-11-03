@@ -42,3 +42,21 @@ IAM role assignments
 custom role permissions
 <img width="1678" height="873" alt="sec-dev-app" src="https://github.com/user-attachments/assets/cff6bf7a-5716-4067-94f8-d106da451654" />
 app registration
+
+## Conditional Access
+
+`conditional_access.tf` a policy requiring MFA for all users,
+in report-only mode, with my own account excluded to prevent lockout.
+
+Conditional Access requires an Entra ID P1 licence,
+which this tenant does not have so it was not deployed.
+The configuration passes `terraform validate`.
+
+
+## What I learned
+
+- azurerm manages Azure resources, azuread manages identities
+- A Service Principal is a non-human account for apps
+- Custom roles beat broad built-in roles for least privilege
+- New subscriptions can fail on provider registration; skip_provider_registration fixes it on azurerm 3.x
+- Conditional Access policies should start in report-only mode
