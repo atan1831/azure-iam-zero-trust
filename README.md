@@ -11,6 +11,7 @@ Focus: least privilege.
 | Service Principal | Non-human account the app uses to sign in |
 | Custom RBAC role | Read-only: resource groups, Key Vault, VNet |
 | Role assignment | Gives the Service Principal only that custom role |
+| Conditional Access policy | Require MFA for all users (report-only, not deployed) |
 
 ## Why a custom role
 
@@ -36,27 +37,31 @@ at resources but cannot change or delete anything.
 
 ## Screenshots
 
-<img width="1103" height="658" alt="sec-dev-custom-role" src="https://github.com/user-attachments/assets/a8f28289-fbe3-4686-9b38-47c53b05e3b5" />
-IAM role assignments
-<img width="1425" height="722" alt="sec-dev-custom-role desc" src="https://github.com/user-attachments/assets/128a152a-1cfa-47c1-b80c-808035398d1c" />
-custom role permissions
-<img width="1678" height="873" alt="sec-dev-app" src="https://github.com/user-attachments/assets/cff6bf7a-5716-4067-94f8-d106da451654" />
-app registration
+**IAM role assignments**
+
+<img width="1103" height="658" alt="IAM role assignments" src="https://github.com/user-attachments/assets/a8f28289-fbe3-4686-9b38-47c53b05e3b5" />
+
+**Custom role permissions**
+
+<img width="1425" height="722" alt="Custom role permissions" src="https://github.com/user-attachments/assets/128a152a-1cfa-47c1-b80c-808035398d1c" />
+
+**App registration**
+
+<img width="1678" height="873" alt="App registration" src="https://github.com/user-attachments/assets/cff6bf7a-5716-4067-94f8-d106da451654" />
 
 ## Conditional Access
 
-`conditional_access.tf` a policy requiring MFA for all users,
+`conditional_access.tf` defines a policy requiring MFA for all users,
 in report-only mode, with my own account excluded to prevent lockout.
 
 Conditional Access requires an Entra ID P1 licence,
-which this tenant does not have so it was not deployed.
+which this tenant does not have, so it was not deployed.
 The configuration passes `terraform validate`.
-
 
 ## What I learned
 
 - azurerm manages Azure resources, azuread manages identities
 - A Service Principal is a non-human account for apps
 - Custom roles beat broad built-in roles for least privilege
-- New subscriptions can fail on provider registration; skip_provider_registration fixes it on azurerm 3.x
+- New subscriptions can fail on provider registration; on azurerm 3.x, `skip_provider_registration = true` in the provider block is a workaround
 - Conditional Access policies should start in report-only mode
