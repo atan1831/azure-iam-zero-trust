@@ -1,8 +1,7 @@
-# Terraform state — NEVER commit this
+# Terraform state - NEVER commit this
 *.tfstate
 *.tfstate.*
 .terraform/
-.terraform.lock.hcl
 
 # Variables with sensitive data
 terraform.tfvars
@@ -10,3 +9,7 @@ terraform.tfvars
 
 # Crash log
 crash.log
+crash.*.log
+
+# Plan files
+*.tfplan
