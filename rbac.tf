@@ -6,7 +6,7 @@ resource "azurerm_role_definition" "custom_role" {
   description = "Custom role with least privilege for ${var.prefix} app"
 
   permissions {
-    # Read-only access to resources — nothing more
+    # Read-only access to resources, nothing more
     actions = [
       "Microsoft.Resources/subscriptions/resourceGroups/read",
       "Microsoft.KeyVault/vaults/read",
@@ -21,7 +21,7 @@ resource "azurerm_role_definition" "custom_role" {
 }
 
 # Assign Custom Role to Service Principal
-# This is least privilege — the SP only gets what it needs
+# Least privilege: the SP only gets what it needs
 resource "azurerm_role_assignment" "sp_role" {
   scope              = "/subscriptions/${var.subscription_id}"
   role_definition_id = azurerm_role_definition.custom_role.role_definition_resource_id
